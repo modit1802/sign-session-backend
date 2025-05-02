@@ -24,22 +24,22 @@ app.post("/send-email", async (req, res) => {
     from: "moditgrover2003.iii@gmail.com",
     to: userEmail,
     subject: "Session Confirmation and Details",
-    text: `
-Dear [User],
+    html: `
+Hi Dear,<br><br>
 
-We are pleased to inform you that your session with Trainer ${trainerName} has been successfully scheduled.
+We are pleased to inform you that your session with Trainer <strong>${trainerName}</strong> has been successfully scheduled.<br><br>
 
-**Session Details:**
-- Trainer: ${trainerName}
-- Date and Time: ${timeSlot}
-- Google Meet Link: ${meetLink}
+<strong>Session Details:</strong><br>
+- <strong>Trainer:</strong> ${trainerName}<br>
+- <strong>Date and Time:</strong> ${timeSlot}<br>
+- <strong>Google Meet Link:</strong> <a href="${meetLink}" target="_blank">${meetLink}</a><br><br>
 
-Please make sure to join the meeting at the scheduled time. Should you need to reschedule or have any further questions, feel free to contact us.
+Please make sure to join the meeting at the scheduled time. Should you need to reschedule or have any further questions, feel free to contact us.<br><br>
 
-We look forward to your session.
+We look forward to your session.<br><br>
 
-Best regards,
-The Scheduling Team
+Best regards,<br>
+MAAASign Team
     `,
   };
 
