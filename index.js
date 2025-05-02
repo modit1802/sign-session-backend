@@ -23,8 +23,24 @@ app.post("/send-email", async (req, res) => {
   const mailOptions = {
     from: "moditgrover2003.iii@gmail.com",
     to: userEmail,
-    subject: "Session Scheduled Confirmation",
-    text: `You have scheduled a session with ${trainerName} on ${timeSlot}. Join via Google Meet: ${meetLink}`,
+    subject: "Session Confirmation and Details",
+    text: `
+Dear [User],
+
+We are pleased to inform you that your session with Trainer ${trainerName} has been successfully scheduled.
+
+**Session Details:**
+- Trainer: ${trainerName}
+- Date and Time: ${timeSlot}
+- Google Meet Link: ${meetLink}
+
+Please make sure to join the meeting at the scheduled time. Should you need to reschedule or have any further questions, feel free to contact us.
+
+We look forward to your session.
+
+Best regards,
+The Scheduling Team
+    `,
   };
 
   try {
